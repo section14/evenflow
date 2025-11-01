@@ -1,6 +1,17 @@
+@import "/static/css/theme.css";
+
 .layout {
     padding: 1.0rem;
     height: 500px;
+}
+
+.boxes {
+    display: flex;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
 }
 
 .page-home {
