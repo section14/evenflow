@@ -9,7 +9,7 @@ import (
 
 func pageRoutes(mux *chi.Mux, s *Server) {
     mux.Get("/", s.homePage)
-    mux.Get("/widget", s.widgetPage)
+    mux.Get("/widgets", s.widgetPage)
 }
 
 func (s *Server) homePage(w http.ResponseWriter, r *http.Request) {
