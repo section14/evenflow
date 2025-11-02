@@ -13,6 +13,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/cors"
+
 )
 
 type Server struct {
@@ -25,6 +26,11 @@ func NewServer(t *template.Template) *Server {
 
 func handlers(mux *chi.Mux, s *Server) {
 	pageRoutes(mux, s)
+
+    apiMux := chi.NewRouter()
+    partialsRoutes(apiMux, s)
+
+    mux.Mount("/api", apiMux)
 }
 
 func systemTemplates(rootDir string, funcMap template.FuncMap) (*template.Template, error) {

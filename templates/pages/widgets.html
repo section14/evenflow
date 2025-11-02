@@ -5,5 +5,17 @@
         You are at widgets
     </div>
     <img src="/static/images/image02.jpg" />
+
+    <button type="button" onclick="clickChange()">Change em</button>
+
+    <div id='widget-list-container' />
+
+    <script>
+        const clickChange = () => {
+            swapContent("/api/partials/widgets/b", "widget-list-container")
+        }    
+
+        swapContent("/api/partials/widgets/a", "widget-list-container")
+    </script>
 </div>
 {{ template "foot.html" .}}
